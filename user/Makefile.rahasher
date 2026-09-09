@@ -1,0 +1,139 @@
+# RAHasher stream library build (user-local)
+# Usage examples:
+#   make -f user/Makefile.rahasher dynamic TARGET_PLATFORM=mac TARGET_ARCH=arm64 VERSION=dev
+#   make -f user/Makefile.rahasher static TARGET_PLATFORM=linux TARGET_ARCH=x64 VERSION=dev
+#   make -f user/Makefile.rahasher bin TARGET_PLATFORM=mac TARGET_ARCH=arm64 VERSION=dev
+
+ROOT := .
+TARGET_PLATFORM ?= mac
+TARGET_ARCH ?= arm64
+VERSION ?= dev
+BUILD_TYPE ?= dynamic
+BUILD_DIR ?= user/_build/$(TARGET_PLATFORM)/$(TARGET_ARCH)
+RELEASE_BASE ?= user/release/$(TARGET_PLATFORM)/$(TARGET_ARCH)
+
+CC ?= gcc
+CXX ?= g++
+AR ?= ar
+
+INCLUDES := -Isrc -I./src/miniz -I./src/rcheevos/include
+BASE_DEFINES := -D_CONSOLE
+CFLAGS := -Wall -O3 -DNDEBUG $(INCLUDES) $(BASE_DEFINES)
+CXXFLAGS := $(CFLAGS) -std=c++23
+LDFLAGS :=
+
+ifeq ($(TARGET_ARCH),x64)
+  CFLAGS += -m64
+  CXXFLAGS += -m64
+  LDFLAGS += -m64
+  CFLAGS += -mavx2
+  CXXFLAGS += -mavx2
+  AVX512_OK := $(shell printf "int main(){return 0;}" | $(CXX) -x c++ - -mavx512f -c -o /dev/null >/dev/null 2>&1 && echo 1 || echo 0)
+  ifeq ($(AVX512_OK),1)
+    CFLAGS += -mavx512f
+    CXXFLAGS += -mavx512f
+  endif
+else ifeq ($(TARGET_ARCH),arm64)
+  CFLAGS += -march=armv8-a
+  CXXFLAGS += -march=armv8-a
+  LDFLAGS += -march=armv8-a
+else
+  $(error unsupported TARGET_ARCH=$(TARGET_ARCH))
+endif
+
+ifeq ($(TARGET_PLATFORM),mac)
+  SHARED_EXT := dylib
+  SHARED_LDFLAGS := -dynamiclib
+else ifeq ($(TARGET_PLATFORM),linux)
+  SHARED_EXT := so
+  SHARED_LDFLAGS := -shared
+else ifeq ($(TARGET_PLATFORM),windows)
+  SHARED_EXT := dll
+  SHARED_LDFLAGS := -shared
+else ifeq ($(TARGET_PLATFORM),iphone)
+  SHARED_EXT := dylib
+  SHARED_LDFLAGS := -dynamiclib
+  CFLAGS += -fPIC
+  CXXFLAGS += -fPIC
+else ifeq ($(TARGET_PLATFORM),android)
+  SHARED_EXT := so
+  SHARED_LDFLAGS := -shared
+  CFLAGS += -fPIC
+  CXXFLAGS += -fPIC
+else
+  $(error unsupported TARGET_PLATFORM=$(TARGET_PLATFORM))
+endif
+
+CFLAGS += -fPIC
+CXXFLAGS += -fPIC
+
+OBJS := \
+  $(BUILD_DIR)/src/components/Logger.o \
+  $(BUILD_DIR)/src/libmincrypt/sha256.o \
+  $(BUILD_DIR)/src/miniz/miniz.o \
+  $(BUILD_DIR)/src/miniz/miniz_tdef.o \
+  $(BUILD_DIR)/src/miniz/miniz_tinfl.o \
+  $(BUILD_DIR)/src/miniz/miniz_zip.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/aes.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/cdreader.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/hash.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/hash_disc.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/hash_encrypted.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/hash_rom.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/hash_zip.o \
+  $(BUILD_DIR)/src/rcheevos/src/rhash/md5.o \
+  $(BUILD_DIR)/src/Hash3DS.o \
+  $(BUILD_DIR)/src/Util.o \
+  $(BUILD_DIR)/user/rahasher_stream.o
+
+SHARED_OUT := $(RELEASE_BASE)/dynamic/libRAHasher.$(SHARED_EXT)
+STATIC_OUT := $(RELEASE_BASE)/static/libRAHasher.a
+BIN_OUT := $(RELEASE_BASE)/bin/rahasher_stream_sample
+ICLUDE_OUT := $(RELEASE_BASE)/iclude/rahasher_stream.h
+TEST_BIN := user/tests/_build/test_stream_basic
+
+all: dynamic
+
+dynamic: headers $(SHARED_OUT)
+
+static: headers $(STATIC_OUT)
+
+bin: headers $(BIN_OUT)
+
+test: dynamic $(TEST_BIN)
+	DYLD_LIBRARY_PATH="$(RELEASE_BASE)/dynamic" "$(TEST_BIN)"
+
+headers: $(ICLUDE_OUT)
+
+$(ICLUDE_OUT): user/rahasher_stream.h
+	mkdir -p "$(dir $@)"
+	cp "$<" "$@"
+
+$(SHARED_OUT): $(OBJS)
+	mkdir -p "$(dir $@)"
+	$(CXX) $(SHARED_LDFLAGS) -o "$@" $^ $(LDFLAGS)
+
+$(STATIC_OUT): $(OBJS)
+	mkdir -p "$(dir $@)"
+	$(AR) rcs "$@" $^
+
+$(BIN_OUT): $(BUILD_DIR)/user/sample_stream_client.o $(SHARED_OUT)
+	mkdir -p "$(dir $@)"
+	$(CXX) -o "$@" $(BUILD_DIR)/user/sample_stream_client.o -L"$(RELEASE_BASE)/dynamic" -lRAHasher -Wl,-rpath,@loader_path/../dynamic $(LDFLAGS)
+
+$(TEST_BIN): user/tests/test_stream_basic.cpp user/rahasher_stream.h $(SHARED_OUT)
+	mkdir -p "$(dir $@)"
+	$(CXX) $(CXXFLAGS) -o "$@" user/tests/test_stream_basic.cpp -Iuser -L"$(RELEASE_BASE)/dynamic" -lRAHasher -Wl,-rpath,$(PWD)/$(RELEASE_BASE)/dynamic $(LDFLAGS)
+
+$(BUILD_DIR)/%.o: %.cpp
+	mkdir -p "$(dir $@)"
+	$(CXX) $(CXXFLAGS) -c "$<" -o "$@"
+
+$(BUILD_DIR)/%.o: %.c
+	mkdir -p "$(dir $@)"
+	$(CC) $(CFLAGS) -c "$<" -o "$@"
+
+clean:
+	rm -rf user/_build user/release user/tests/_build
+
+.PHONY: all dynamic static bin test headers clean

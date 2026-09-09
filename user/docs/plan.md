@@ -27,7 +27,12 @@ Use RAHasher for:
 
 
 ## Build output
-- user/build/libRAHasher.dylib
+- user/release/{platform}/{arch}/{version}/{type(dynamic/static/bin)}/libRAHasher.ext(dylib etc)
+- interemediate build dir user/_build
+- one build script for all platforms. auto detect if no target option. if option (mac/windows/linux/iphone/android) then buid for those.
+- mac/iphone/android only arm64, win/linux only x64
+- use avx2/avx512 if possible.
+- use c/c++ 23 if possible
 
 ## Planned files under user/
 - user/rahasher_stream.h
