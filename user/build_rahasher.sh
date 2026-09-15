@@ -88,4 +88,4 @@ done
 
 echo "Build done. Output root: user/release/$TARGET/$ARCH"
 echo "Dynamic lib: user/release/$TARGET/$ARCH/dynamic"
-echo "Header: user/release/$TARGET/$ARCH/iclude"
+echo "Header: user/release/$TARGET/$ARCH/include"
