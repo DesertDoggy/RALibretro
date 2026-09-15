@@ -264,8 +264,7 @@ int rahasher_stream_feed(rahasher_stream_ctx_t* ctx, const uint8_t* data, size_t
 
   if (ctx->finalized)
   {
-    set_error(ctx, "feed called after finish");
-    return RAHASHER_STREAM_ERR_INVALID_ARG;
+    return RAHASHER_STREAM_OK;
   }
 
   const size_t written = fwrite(data, 1, size, ctx->stream_fp);
