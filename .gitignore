@@ -15,3 +15,5 @@
 /src/RA_BuildVer.h
 
 .vscode
+user/release/mac/.DS_Store
+.DS_Store
