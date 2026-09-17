@@ -1,0 +1,239 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "libchdr-static.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 77,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 79,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 78,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"compileDependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "lzma::@6db2e015ce99da8dc693"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "zlibstatic::@b5026cf0bdf16fe2c8b1"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "libzstd_static::@a89a8ffbce2913ecc866"
+		}
+	],
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -arch arm64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/Users/max/GitHub/RALibretro/src/libchdr/lzma"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/max/GitHub/RALibretro/build/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/max/GitHub/RALibretro/src/libchdr/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "lzma::@6db2e015ce99da8dc693"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "zlibstatic::@b5026cf0bdf16fe2c8b1"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "libzstd_static::@a89a8ffbce2913ecc866"
+		}
+	],
+	"id" : "chdr-static::@6890427a1f51a3e7e1df",
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "lzma::@6db2e015ce99da8dc693"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "zlibstatic::@b5026cf0bdf16fe2c8b1"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "libzstd_static::@a89a8ffbce2913ecc866"
+		}
+	],
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "lzma::@6db2e015ce99da8dc693"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "zlibstatic::@b5026cf0bdf16fe2c8b1"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "libzstd_static::@a89a8ffbce2913ecc866"
+		}
+	],
+	"name" : "chdr-static",
+	"nameOnDisk" : "libchdr-static.a",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"backtraces" : 
+			[
+				1
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/libchdr_bitstream.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"backtraces" : 
+			[
+				1
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/libchdr_cdrom.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"backtraces" : 
+			[
+				1
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/libchdr_chd.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"backtraces" : 
+			[
+				1
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/libchdr_flac.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"backtraces" : 
+			[
+				1
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/libchdr_huffman.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

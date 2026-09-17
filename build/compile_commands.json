@@ -1,0 +1,488 @@
+[
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -o CMakeFiles/chdr-static.dir/src/libchdr_bitstream.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_bitstream.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_bitstream.c",
+  "output": "CMakeFiles/chdr-static.dir/src/libchdr_bitstream.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -o CMakeFiles/chdr-static.dir/src/libchdr_cdrom.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_cdrom.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_cdrom.c",
+  "output": "CMakeFiles/chdr-static.dir/src/libchdr_cdrom.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -o CMakeFiles/chdr-static.dir/src/libchdr_chd.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_chd.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_chd.c",
+  "output": "CMakeFiles/chdr-static.dir/src/libchdr_chd.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -o CMakeFiles/chdr-static.dir/src/libchdr_flac.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_flac.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_flac.c",
+  "output": "CMakeFiles/chdr-static.dir/src/libchdr_flac.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -o CMakeFiles/chdr-static.dir/src/libchdr_huffman.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_huffman.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_huffman.c",
+  "output": "CMakeFiles/chdr-static.dir/src/libchdr_huffman.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang -Dchdr_EXPORTS -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -fPIC -fvisibility=hidden -o CMakeFiles/chdr.dir/src/libchdr_bitstream.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_bitstream.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_bitstream.c",
+  "output": "CMakeFiles/chdr.dir/src/libchdr_bitstream.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang -Dchdr_EXPORTS -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -fPIC -fvisibility=hidden -o CMakeFiles/chdr.dir/src/libchdr_cdrom.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_cdrom.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_cdrom.c",
+  "output": "CMakeFiles/chdr.dir/src/libchdr_cdrom.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang -Dchdr_EXPORTS -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -fPIC -fvisibility=hidden -o CMakeFiles/chdr.dir/src/libchdr_chd.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_chd.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_chd.c",
+  "output": "CMakeFiles/chdr.dir/src/libchdr_chd.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang -Dchdr_EXPORTS -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -fPIC -fvisibility=hidden -o CMakeFiles/chdr.dir/src/libchdr_flac.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_flac.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_flac.c",
+  "output": "CMakeFiles/chdr.dir/src/libchdr_flac.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build",
+  "command": "/usr/bin/clang -Dchdr_EXPORTS -I/Users/max/GitHub/RALibretro/src/libchdr/lzma -I/Users/max/GitHub/RALibretro/build/include -I/Users/max/GitHub/RALibretro/src/libchdr/include -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/../../lib -g -arch arm64 -fPIC -fvisibility=hidden -o CMakeFiles/chdr.dir/src/libchdr_huffman.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_huffman.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/src/libchdr_huffman.c",
+  "output": "CMakeFiles/chdr.dir/src/libchdr_huffman.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/Alloc.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Alloc.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Alloc.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/Alloc.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/Bra.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Bra.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Bra.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/Bra.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/Bra86.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Bra86.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Bra86.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/Bra86.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/BraIA64.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/BraIA64.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/BraIA64.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/BraIA64.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/CpuArch.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/CpuArch.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/CpuArch.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/CpuArch.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/Delta.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Delta.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Delta.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/Delta.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/LzFind.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/LzFind.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/LzFind.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/LzFind.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/Lzma86Dec.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Lzma86Dec.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Lzma86Dec.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/Lzma86Dec.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/LzmaDec.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/LzmaDec.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/LzmaDec.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/LzmaDec.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/LzmaEnc.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/LzmaEnc.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/LzmaEnc.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/LzmaEnc.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/lzma-24.05",
+  "command": "/usr/bin/clang -DZ7_ST -I/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/include -g -arch arm64 -fPIC -o CMakeFiles/lzma.dir/src/Sort.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Sort.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/lzma-24.05/src/Sort.c",
+  "output": "deps/lzma-24.05/CMakeFiles/lzma.dir/src/Sort.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/adler32.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/adler32.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/adler32.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/adler32.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/compress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/compress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/compress.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/compress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/crc32.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/crc32.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/crc32.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/crc32.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/deflate.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/deflate.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/deflate.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/deflate.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/gzclose.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzclose.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzclose.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/gzclose.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/gzlib.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzlib.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzlib.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/gzlib.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/gzread.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzread.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzread.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/gzread.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/gzwrite.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzwrite.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzwrite.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/gzwrite.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/inflate.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inflate.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inflate.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/inflate.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/infback.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/infback.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/infback.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/infback.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/inftrees.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inftrees.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inftrees.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/inftrees.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/inffast.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inffast.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inffast.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/inffast.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/trees.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/trees.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/trees.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/trees.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/uncompr.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/uncompr.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/uncompr.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/uncompr.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlibstatic.dir/zutil.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/zutil.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/zutil.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlibstatic.dir/zutil.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/adler32.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/adler32.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/adler32.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/adler32.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/compress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/compress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/compress.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/compress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/crc32.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/crc32.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/crc32.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/crc32.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/deflate.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/deflate.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/deflate.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/deflate.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/gzclose.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzclose.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzclose.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/gzclose.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/gzlib.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzlib.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzlib.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/gzlib.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/gzread.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzread.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzread.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/gzread.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/gzwrite.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzwrite.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/gzwrite.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/gzwrite.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/inflate.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inflate.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inflate.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/inflate.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/infback.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/infback.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/infback.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/infback.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/inftrees.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inftrees.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inftrees.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/inftrees.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/inffast.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inffast.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/inffast.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/inffast.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/trees.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/trees.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/trees.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/trees.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/uncompr.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/uncompr.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/uncompr.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/uncompr.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1",
+  "command": "/usr/bin/clang -DZLIB_DLL -I/Users/max/GitHub/RALibretro/build/deps/zlib-1.3.1 -I/Users/max/GitHub/RALibretro/src/libchdr -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1 -g -arch arm64 -fPIC -o CMakeFiles/zlib.dir/zutil.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/zutil.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zlib-1.3.1/zutil.c",
+  "output": "deps/zlib-1.3.1/CMakeFiles/zlib.dir/zutil.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/debug.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/debug.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/debug.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/debug.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/entropy_common.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/entropy_common.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/entropy_common.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/entropy_common.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/error_private.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/error_private.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/error_private.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/error_private.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/fse_decompress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/fse_decompress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/fse_decompress.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/fse_decompress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/pool.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/pool.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/pool.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/pool.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/threading.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/threading.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/threading.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/threading.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/xxhash.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/xxhash.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/xxhash.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/xxhash.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/common/zstd_common.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/zstd_common.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/common/zstd_common.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/common/zstd_common.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/fse_compress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/fse_compress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/fse_compress.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/fse_compress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/hist.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/hist.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/hist.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/hist.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/huf_compress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/huf_compress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/huf_compress.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/huf_compress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress_literals.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress_literals.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress_literals.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress_literals.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress_sequences.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress_sequences.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress_sequences.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress_sequences.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress_superblock.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress_superblock.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_compress_superblock.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_compress_superblock.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_double_fast.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_double_fast.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_double_fast.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_double_fast.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_fast.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_fast.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_fast.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_fast.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_lazy.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_lazy.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_lazy.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_lazy.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_ldm.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_ldm.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_ldm.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_ldm.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_opt.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_opt.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstd_opt.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_opt.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstdmt_compress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstdmt_compress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/compress/zstdmt_compress.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstdmt_compress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/huf_decompress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/huf_decompress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/huf_decompress.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/huf_decompress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_ddict.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/zstd_ddict.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/zstd_ddict.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_ddict.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_decompress.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/zstd_decompress.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/zstd_decompress.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_decompress.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_decompress_block.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/zstd_decompress_block.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/decompress/zstd_decompress_block.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_decompress_block.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/cover.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/cover.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/cover.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/cover.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/divsufsort.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/divsufsort.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/divsufsort.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/divsufsort.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/fastcover.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/fastcover.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/fastcover.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/fastcover.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib",
+  "command": "/usr/bin/clang -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -I/Users/max/GitHub/RALibretro/build/deps/zstd-1.5.6/build/cmake/lib -I/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/build/cmake/lib  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -DDEBUGLEVEL=1 -Qunused-arguments -Wa,--noexecstack -g -arch arm64 -fPIC -DZSTD_DISABLE_ASM -o CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/zdict.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/zdict.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/deps/zstd-1.5.6/lib/dictBuilder/zdict.c",
+  "output": "deps/zstd-1.5.6/build/cmake/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/zdict.c.o"
+},
+{
+  "directory": "/Users/max/GitHub/RALibretro/build/tests",
+  "command": "/usr/bin/clang  -I/Users/max/GitHub/RALibretro/src/libchdr/include -g -arch arm64 -o CMakeFiles/chdr-benchmark.dir/benchmark.c.o -c /Users/max/GitHub/RALibretro/src/libchdr/tests/benchmark.c",
+  "file": "/Users/max/GitHub/RALibretro/src/libchdr/tests/benchmark.c",
+  "output": "tests/CMakeFiles/chdr-benchmark.dir/benchmark.c.o"
+}
+]
