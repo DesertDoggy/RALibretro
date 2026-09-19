@@ -28,11 +28,12 @@ ifeq ($(TARGET_ARCH),x64)
   LDFLAGS += -m64
   CFLAGS += -mavx2
   CXXFLAGS += -mavx2
-  AVX512_OK := $(shell printf "int main(){return 0;}" | $(CXX) -x c++ - -mavx512f -c -o /dev/null >/dev/null 2>&1 && echo 1 || echo 0)
-  ifeq ($(AVX512_OK),1)
-    CFLAGS += -mavx512f
-    CXXFLAGS += -mavx512f
-  endif
+  # AVX2 only: AVX-512 support depends on the CPU that will run the resulting binary,
+  # not on whether the compiler can assemble AVX-512 instructions (most compilers can,
+  # regardless of host CPU). Probing compiler support and enabling it project-wide here
+  # caused STATUS_ILLEGAL_INSTRUCTION crashes on machines without AVX-512 (e.g. all
+  # Intel client chips since 12th-gen "Alder Lake", all AMD chips before Zen 4). AVX2
+  # is supported on effectively all x64 CPUs since ~2013.
 else ifeq ($(TARGET_ARCH),arm64)
   CFLAGS += -march=armv8-a
   CXXFLAGS += -march=armv8-a
