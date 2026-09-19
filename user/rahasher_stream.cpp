@@ -4,18 +4,11 @@
 
 #include <rcheevos/include/rc_hash.h>
 
-#include <algorithm>
 #include <cctype>
 #include <cstdio>
-#include <cstdlib>
 #include <cstring>
-#include <memory>
 #include <mutex>
 #include <string>
-#include <vector>
-
-#include <stdlib.h>
-#include <unistd.h>
 
 #ifdef HAVE_CHD
 void rc_hash_init_chd_cdreader(); /* in HashCHD.cpp */
@@ -23,52 +16,35 @@ void rc_hash_init_chd_cdreader(); /* in HashCHD.cpp */
 
 void initHash3DS(const std::string& systemDir); /* in Hash3DS.cpp */
 
-struct rahasher_stream_ctx
-{
-  uint32_t console_id = 0;
-  uint64_t expected_total_bytes = 0;
-  uint64_t bytes_fed = 0;
-  uint64_t bytes_hashed = 0;
-  uint64_t next_feed_progress_mark = 0;
-  bool finalized = false;
-
-  std::string source_name;
-  std::string source_extension;
-  std::string system_dir;
-  std::string temp_dir;
-  std::string temp_path;
-  std::string last_error;
-  char hash[33] = {};
-
-  FILE* stream_fp = nullptr;
-
-  rahasher_progress_callback progress_cb = nullptr;
-  rahasher_notice_callback notice_cb = nullptr;
-  void* userdata = nullptr;
-};
-
 namespace
 {
   static const int RC_CONSOLE_MAX = 90;
 
+  /* Serializes calls into rc_hash_generate, which relies on process-wide static state
+   * inside rcheevos (cdreader setup, Hash3DS init, etc.) that isn't safe to touch from
+   * multiple threads at once. */
   static std::mutex g_hash_mutex;
-  static thread_local rahasher_stream_ctx* g_active_ctx = nullptr;
 
-  static void set_error(rahasher_stream_ctx* ctx, const char* message)
+  static thread_local std::string g_last_error;
+
+  struct rahasher_file_ctx
   {
-    if (!ctx)
-      return;
+    uint64_t expected_total_bytes = 0;
+    uint64_t bytes_hashed = 0;
+    /* Set by filereader_read when a read hits a short read before reaching
+     * expected_total_bytes, meaning the hash algorithm needed data that isn't on
+     * disk yet rather than having genuinely reached the end of the file. */
+    bool need_more_data = false;
+  };
 
-    ctx->last_error = message ? message : "unknown error";
-    if (ctx->notice_cb)
-      ctx->notice_cb(RAHASHER_NOTICE_ERROR, ctx->last_error.c_str(), ctx->userdata);
-  }
+  /* rc_hash's filereader.read callback has no userdata parameter, so the context for
+   * the in-flight call is reached via this thread-local instead. */
+  static thread_local rahasher_file_ctx* g_active_ctx = nullptr;
 
   static std::string to_lower(std::string value)
   {
-    std::transform(value.begin(), value.end(), value.begin(), [](unsigned char c) {
-      return static_cast<char>(std::tolower(c));
-    });
+    for (char& c : value)
+      c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
     return value;
   }
 
@@ -76,7 +52,7 @@ namespace
   {
     const size_t slash_pos = path.find_last_of("/\\");
     if (slash_pos == std::string::npos)
-      return path.empty() ? std::string("stream.bin") : path;
+      return path;
 
     return path.substr(slash_pos + 1);
   }
@@ -91,28 +67,14 @@ namespace
     return to_lower(base.substr(dot_pos));
   }
 
-  static void emit_progress(rahasher_stream_ctx* ctx, const char* stage, uint64_t bytes_read, uint64_t bytes_expected)
+  static void RC_CCONV iterator_verbose_bridge(const char* /*message*/, const rc_hash_iterator_t* /*iterator*/)
   {
-    if (ctx && ctx->progress_cb)
-      ctx->progress_cb(stage, bytes_read, bytes_expected, ctx->userdata);
+    /* No verbose logging sink in the simplified file-path API. */
   }
 
-  static void emit_notice(rahasher_stream_ctx* ctx, int severity, const char* message)
+  static void RC_CCONV iterator_error_bridge(const char* message, const rc_hash_iterator_t* /*iterator*/)
   {
-    if (ctx && ctx->notice_cb)
-      ctx->notice_cb(severity, message, ctx->userdata);
-  }
-
-  static void RC_CCONV iterator_verbose_bridge(const char* message, const rc_hash_iterator_t* iterator)
-  {
-    rahasher_stream_ctx* ctx = iterator ? static_cast<rahasher_stream_ctx*>(iterator->userdata) : nullptr;
-    emit_notice(ctx, RAHASHER_NOTICE_VERBOSE, message ? message : "");
-  }
-
-  static void RC_CCONV iterator_error_bridge(const char* message, const rc_hash_iterator_t* iterator)
-  {
-    rahasher_stream_ctx* ctx = iterator ? static_cast<rahasher_stream_ctx*>(iterator->userdata) : nullptr;
-    emit_notice(ctx, RAHASHER_NOTICE_ERROR, message ? message : "");
+    g_last_error = message ? message : "unknown error";
   }
 
   static void* RC_CCONV filereader_open(const char* path_utf8)
@@ -142,12 +104,18 @@ namespace
   {
     size_t read_bytes = fread(buffer, 1, requested_bytes, static_cast<FILE*>(file_handle));
 
-    rahasher_stream_ctx* ctx = g_active_ctx;
+    rahasher_file_ctx* ctx = g_active_ctx;
     if (ctx)
     {
       ctx->bytes_hashed += static_cast<uint64_t>(read_bytes);
-      const uint64_t expected = ctx->expected_total_bytes ? ctx->expected_total_bytes : ctx->bytes_fed;
-      emit_progress(ctx, "hash-read", ctx->bytes_hashed, expected);
+
+      /* A short read below the expected final size means the algorithm asked for
+       * data that isn't available yet, not that it legitimately reached the end. */
+      if (read_bytes < requested_bytes && ctx->expected_total_bytes != 0 &&
+          ctx->bytes_hashed < ctx->expected_total_bytes)
+      {
+        ctx->need_more_data = true;
+      }
     }
 
     return read_bytes;
@@ -157,220 +125,124 @@ namespace
   {
     fclose(static_cast<FILE*>(file_handle));
   }
-
-  static int run_hash(rahasher_stream_ctx* ctx)
-  {
-    if (ctx->console_id == RC_CONSOLE_NINTENDO_3DS)
-      initHash3DS(ctx->system_dir);
-
-    rc_hash_iterator_t iterator;
-    std::memset(&iterator, 0, sizeof(iterator));
-    rc_hash_initialize_iterator(&iterator, ctx->temp_path.c_str(), nullptr, 0);
-
-    iterator.userdata = ctx;
-    iterator.callbacks.verbose_message = iterator_verbose_bridge;
-    iterator.callbacks.error_message = iterator_error_bridge;
-    iterator.callbacks.filereader.open = filereader_open;
-    iterator.callbacks.filereader.seek = filereader_seek;
-    iterator.callbacks.filereader.tell = filereader_tell;
-    iterator.callbacks.filereader.read = filereader_read;
-    iterator.callbacks.filereader.close = filereader_close;
-
-#ifdef HAVE_CHD
-    if (ctx->source_extension == ".chd")
-      rc_hash_init_chd_cdreader();
-    else
-#endif
-      rc_hash_init_default_cdreader();
-
-    std::lock_guard<std::mutex> lock(g_hash_mutex);
-    g_active_ctx = ctx;
-
-    const int ok = rc_hash_generate(ctx->hash, ctx->console_id, &iterator);
-
-    g_active_ctx = nullptr;
-    rc_hash_destroy_iterator(&iterator);
-
-    return ok;
-  }
 }
 
+/* Declared by Hash3DS.cpp (and others) as an extern hook; must stay at global scope
+ * with C++ linkage matching that declaration. */
 void rhash_log_error_message(const char* message)
 {
-  if (g_active_ctx && g_active_ctx->notice_cb)
-    g_active_ctx->notice_cb(RAHASHER_NOTICE_ERROR, message ? message : "", g_active_ctx->userdata);
-  else
-    std::fprintf(stderr, "%s\n", message ? message : "");
+  g_last_error = message ? message : "unknown error";
+  std::fprintf(stderr, "%s\n", message ? message : "");
 }
 
-rahasher_stream_ctx_t* rahasher_stream_begin(
+const char* rahasher_get_last_error(void)
+{
+  return g_last_error.c_str();
+}
+
+int rahasher_hash_file(
   uint32_t console_id,
-  const char* source_name,
+  const char* file_path,
   const char* system_dir,
   uint64_t expected_total_bytes,
-  rahasher_progress_callback progress_cb,
-  rahasher_notice_callback notice_cb,
-  void* userdata)
+  char out_hash[33],
+  int* out_done)
 {
-  if (!source_name || console_id == 0)
-    return nullptr;
+  if (!file_path || !out_hash || !out_done || console_id == 0)
+    return RAHASHER_FILE_ERR_INVALID_ARG;
 
-  std::unique_ptr<rahasher_stream_ctx> ctx(new rahasher_stream_ctx());
-  ctx->console_id = console_id;
-  ctx->expected_total_bytes = expected_total_bytes;
-  ctx->source_name = source_name;
-  ctx->source_extension = get_extension(ctx->source_name);
-  ctx->system_dir = system_dir ? system_dir : ".";
-  ctx->progress_cb = progress_cb;
-  ctx->notice_cb = notice_cb;
-  ctx->userdata = userdata;
+  *out_done = 0;
 
-  if (ctx->console_id > RC_CONSOLE_MAX)
+  if (console_id > RC_CONSOLE_MAX)
   {
-    set_error(ctx.get(), "console_id must be a specific console id (<= 90)");
-    return nullptr;
+    g_last_error = "console_id must be a specific console id (<= 90)";
+    return RAHASHER_FILE_ERR_INVALID_ARG;
   }
 
-  char temp_dir_template[] = "/tmp/rahasher_stream_XXXXXX";
-  char* temp_dir = mkdtemp(temp_dir_template);
-  if (!temp_dir)
+  const std::string extension = get_extension(file_path);
+  if (extension == ".m3u")
   {
-    set_error(ctx.get(), "failed to create temporary directory");
-    return nullptr;
+    g_last_error = "m3u input is not supported; provide the referenced disc file instead";
+    return RAHASHER_FILE_ERR_UNSUPPORTED;
   }
 
-  ctx->temp_dir = temp_dir;
-
-  std::string base = get_basename(ctx->source_name);
-  if (base.empty())
-    base = "stream.bin";
-
-  ctx->temp_path = ctx->temp_dir + "/" + base;
-  ctx->stream_fp = util::openFile(nullptr, ctx->temp_path, "wb");
-  if (!ctx->stream_fp)
+  if (expected_total_bytes != 0)
   {
-    set_error(ctx.get(), "failed to open temporary file for stream input");
-    return nullptr;
+    /* Some formats (whole-file hashes: Game Boy, NES, SNES, etc.) determine their own
+     * size via a plain seek-to-end/tell on file_path as it exists right now, rather
+     * than expecting a specific total -- they would happily hash a partial file to a
+     * "successful" but wrong result instead of ever hitting a short read. Gate on the
+     * file's current size up front so we only ever attempt a hash once it has reached
+     * the size the caller told us to expect. */
+    FILE* probe = util::openFile(nullptr, file_path, "rb");
+    if (!probe)
+    {
+      g_last_error = "failed to open file";
+      return RAHASHER_FILE_ERR_IO;
+    }
+
+#if defined(_WIN32)
+    _fseeki64(probe, 0, SEEK_END);
+    const uint64_t current_size = static_cast<uint64_t>(_ftelli64(probe));
+#else
+    fseeko(probe, 0, SEEK_END);
+    const uint64_t current_size = static_cast<uint64_t>(ftello(probe));
+#endif
+    fclose(probe);
+
+    if (current_size < expected_total_bytes)
+      return RAHASHER_FILE_OK; /* *out_done stays 0: not enough written yet */
   }
 
-  emit_progress(ctx.get(), "feed-start", 0, ctx->expected_total_bytes);
-  return ctx.release();
-}
+  rahasher_file_ctx ctx;
+  ctx.expected_total_bytes = expected_total_bytes;
 
-int rahasher_stream_feed(rahasher_stream_ctx_t* ctx, const uint8_t* data, size_t size)
-{
-  if (!ctx || !ctx->stream_fp || !data || size == 0)
-    return RAHASHER_STREAM_ERR_INVALID_ARG;
+  char hash[33] = {};
 
-  if (ctx->finalized)
+  rc_hash_iterator_t iterator;
+  std::memset(&iterator, 0, sizeof(iterator));
+  rc_hash_initialize_iterator(&iterator, file_path, nullptr, 0);
+
+  iterator.callbacks.verbose_message = iterator_verbose_bridge;
+  iterator.callbacks.error_message = iterator_error_bridge;
+  iterator.callbacks.filereader.open = filereader_open;
+  iterator.callbacks.filereader.seek = filereader_seek;
+  iterator.callbacks.filereader.tell = filereader_tell;
+  iterator.callbacks.filereader.read = filereader_read;
+  iterator.callbacks.filereader.close = filereader_close;
+
+  g_last_error.clear();
+
+  std::lock_guard<std::mutex> lock(g_hash_mutex);
+
+  if (console_id == RC_CONSOLE_NINTENDO_3DS)
+    initHash3DS(system_dir ? system_dir : ".");
+
+#ifdef HAVE_CHD
+  if (extension == ".chd")
+    rc_hash_init_chd_cdreader();
+  else
+#endif
+    rc_hash_init_default_cdreader();
+
+  g_active_ctx = &ctx;
+  const int ok = rc_hash_generate(hash, console_id, &iterator);
+  g_active_ctx = nullptr;
+
+  rc_hash_destroy_iterator(&iterator);
+
+  if (ok)
   {
-    return RAHASHER_STREAM_OK;
+    std::memcpy(out_hash, hash, 33);
+    *out_done = 1;
+    return RAHASHER_FILE_OK;
   }
 
-  const size_t written = fwrite(data, 1, size, ctx->stream_fp);
-  if (written != size)
-  {
-    set_error(ctx, "failed to write chunk into temporary file");
-    return RAHASHER_STREAM_ERR_IO;
-  }
+  if (ctx.need_more_data)
+    return RAHASHER_FILE_OK; /* not an error: just don't have enough data yet */
 
-  ctx->bytes_fed += static_cast<uint64_t>(written);
+  if (g_last_error.empty())
+    g_last_error = "hash generation failed";
 
-  /* Reduce callback noise while preserving monotonic progress visibility. */
-  const uint64_t kStep = 1024 * 1024;
-  if (ctx->bytes_fed >= ctx->next_feed_progress_mark)
-  {
-    const uint64_t expected = ctx->expected_total_bytes;
-    emit_progress(ctx, "feed", ctx->bytes_fed, expected);
-    ctx->next_feed_progress_mark = ctx->bytes_fed + kStep;
-  }
-
-  return RAHASHER_STREAM_OK;
-}
-
-int rahasher_stream_finish(rahasher_stream_ctx_t* ctx, char out_hash[33])
-{
-  if (!ctx || !out_hash)
-    return RAHASHER_STREAM_ERR_INVALID_ARG;
-
-  if (ctx->finalized)
-  {
-    std::memcpy(out_hash, ctx->hash, 33);
-    return RAHASHER_STREAM_OK;
-  }
-
-  if (!ctx->stream_fp)
-  {
-    set_error(ctx, "stream file handle is not valid");
-    return RAHASHER_STREAM_ERR_IO;
-  }
-
-  if (ctx->source_extension == ".m3u")
-  {
-    set_error(ctx, "m3u stream input is not supported; provide referenced disc file stream instead");
-    return RAHASHER_STREAM_ERR_UNSUPPORTED;
-  }
-
-  emit_progress(ctx, "feed-complete", ctx->bytes_fed, ctx->expected_total_bytes);
-
-  if (fflush(ctx->stream_fp) != 0)
-  {
-    set_error(ctx, "failed to flush temporary file");
-    return RAHASHER_STREAM_ERR_IO;
-  }
-
-  fclose(ctx->stream_fp);
-  ctx->stream_fp = nullptr;
-
-  ctx->bytes_hashed = 0;
-  if (!run_hash(ctx))
-  {
-    if (ctx->last_error.empty())
-      set_error(ctx, "hash generation failed");
-
-    return RAHASHER_STREAM_ERR_HASH;
-  }
-
-  ctx->finalized = true;
-  std::memcpy(out_hash, ctx->hash, 33);
-  emit_progress(ctx, "done", ctx->bytes_hashed, ctx->expected_total_bytes ? ctx->expected_total_bytes : ctx->bytes_fed);
-  return RAHASHER_STREAM_OK;
-}
-
-const char* rahasher_stream_get_last_error(const rahasher_stream_ctx_t* ctx)
-{
-  if (!ctx)
-    return "invalid context";
-
-  return ctx->last_error.c_str();
-}
-
-const char* rahasher_stream_get_hash(const rahasher_stream_ctx_t* ctx)
-{
-  if (!ctx || !ctx->finalized)
-    return nullptr;
-
-  return ctx->hash;
-}
-
-uint64_t rahasher_stream_get_bytes_fed(const rahasher_stream_ctx_t* ctx)
-{
-  return ctx ? ctx->bytes_fed : 0;
-}
-
-void rahasher_stream_destroy(rahasher_stream_ctx_t* ctx)
-{
-  if (!ctx)
-    return;
-
-  if (ctx->stream_fp)
-    fclose(ctx->stream_fp);
-
-  if (!ctx->temp_path.empty())
-    remove(ctx->temp_path.c_str());
-
-  if (!ctx->temp_dir.empty())
-    rmdir(ctx->temp_dir.c_str());
-
-  delete ctx;
+  return RAHASHER_FILE_ERR_HASH;
 }
