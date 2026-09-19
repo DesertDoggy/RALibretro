@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Resolve paths from this script's own location (submodule_root/user), not from the
+# caller's working directory. This lets the script be invoked the same way whether
+# run from the RALibretro submodule root, from the main project root, or via an
+# absolute/relative path from anywhere else.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SUBMODULE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$SUBMODULE_ROOT"
+
 TARGET="auto"
 TYPE="dynamic"
 VERSION="dev"
@@ -42,17 +50,20 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+UNAME_S="$(uname -s)"
+case "$UNAME_S" in
+  Darwin) HOST_PLATFORM="mac" ;;
+  Linux) HOST_PLATFORM="linux" ;;
+  MINGW*|MSYS*|CYGWIN*) HOST_PLATFORM="windows" ;;
+  *) HOST_PLATFORM="unknown" ;;
+esac
+
 if [[ "$TARGET" == "auto" ]]; then
-  UNAME_S="$(uname -s)"
-  case "$UNAME_S" in
-    Darwin) TARGET="mac" ;;
-    Linux) TARGET="linux" ;;
-    MINGW*|MSYS*|CYGWIN*) TARGET="windows" ;;
-    *)
-      echo "Cannot auto-detect target for uname=$UNAME_S" >&2
-      exit 1
-      ;;
-  esac
+  if [[ "$HOST_PLATFORM" == "unknown" ]]; then
+    echo "Cannot auto-detect target for uname=$UNAME_S" >&2
+    exit 1
+  fi
+  TARGET="$HOST_PLATFORM"
 fi
 
 case "$TARGET" in
@@ -77,8 +88,19 @@ case "$TYPE" in
     ;;
 esac
 
-if [[ "$TARGET" == "iphone" || "$TARGET" == "android" || "$TARGET" == "windows" ]]; then
+if [[ "$TARGET" == "iphone" || "$TARGET" == "android" ]]; then
   echo "Note: cross-compilation requires external toolchain setup (CC/CXX/SDK) in your environment." >&2
+elif [[ "$TARGET" == "windows" && "$HOST_PLATFORM" != "windows" ]]; then
+  echo "Note: cross-compiling for windows from $HOST_PLATFORM requires a mingw-w64 CC/CXX toolchain in your environment." >&2
+fi
+
+if [[ "$TARGET" == "windows" && "$HOST_PLATFORM" == "windows" ]]; then
+  CXX_BIN="${CXX:-g++}"
+  if ! command -v "$CXX_BIN" >/dev/null 2>&1; then
+    echo "Error: no C++ compiler found ('$CXX_BIN')." >&2
+    echo "Install the MSYS2 mingw-w64-x86_64-toolchain package and run this script from an MSYS2/MinGW (or Git Bash with mingw64 on PATH) shell." >&2
+    exit 1
+  fi
 fi
 
 for mt in "${MAKE_TARGETS[@]}"; do
@@ -86,6 +108,6 @@ for mt in "${MAKE_TARGETS[@]}"; do
   make -f user/Makefile.rahasher "$mt" TARGET_PLATFORM="$TARGET" TARGET_ARCH="$ARCH" VERSION="$VERSION"
 done
 
-echo "Build done. Output root: user/release/$TARGET/$ARCH"
-echo "Dynamic lib: user/release/$TARGET/$ARCH/dynamic"
-echo "Header: user/release/$TARGET/$ARCH/include"
+echo "Build done. Output root: $SUBMODULE_ROOT/user/release/$TARGET/$ARCH"
+echo "Dynamic lib: $SUBMODULE_ROOT/user/release/$TARGET/$ARCH/dynamic"
+echo "Header: $SUBMODULE_ROOT/user/release/$TARGET/$ARCH/include"

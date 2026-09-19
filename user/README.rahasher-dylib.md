@@ -4,7 +4,7 @@ This user-local implementation exposes a chunk-feed API and builds a shared libr
 
 ## Output layout
 - user/release/{platform}/{arch}/dynamic/libRAHasher.{dylib|so|dll}
-- user/release/{platform}/{arch}/iclude/rahasher_stream.h
+- user/release/{platform}/{arch}/include/rahasher_stream.h
 - user/release/{platform}/{arch}/static/libRAHasher.a
 - user/release/{platform}/{arch}/bin/rahasher_stream_sample
 - intermediate objects: user/_build

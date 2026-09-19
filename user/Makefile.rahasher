@@ -89,7 +89,7 @@ OBJS := \
 SHARED_OUT := $(RELEASE_BASE)/dynamic/libRAHasher.$(SHARED_EXT)
 STATIC_OUT := $(RELEASE_BASE)/static/libRAHasher.a
 BIN_OUT := $(RELEASE_BASE)/bin/rahasher_stream_sample
-ICLUDE_OUT := $(RELEASE_BASE)/iclude/rahasher_stream.h
+INCLUDE_OUT := $(RELEASE_BASE)/include/rahasher_stream.h
 TEST_BIN := user/tests/_build/test_stream_basic
 
 all: dynamic
@@ -103,9 +103,9 @@ bin: headers $(BIN_OUT)
 test: dynamic $(TEST_BIN)
 	DYLD_LIBRARY_PATH="$(RELEASE_BASE)/dynamic" "$(TEST_BIN)"
 
-headers: $(ICLUDE_OUT)
+headers: $(INCLUDE_OUT)
 
-$(ICLUDE_OUT): user/rahasher_stream.h
+$(INCLUDE_OUT): user/rahasher_stream.h
 	mkdir -p "$(dir $@)"
 	cp "$<" "$@"
 
