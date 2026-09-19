@@ -50,6 +50,10 @@ else ifeq ($(TARGET_PLATFORM),linux)
 else ifeq ($(TARGET_PLATFORM),windows)
   SHARED_EXT := dll
   SHARED_LDFLAGS := -shared
+  # Statically link the mingw-w64 runtime so libRAHasher.dll has no external
+  # dependency on libgcc_s_seh-1.dll / libstdc++-6.dll / libwinpthread-1.dll being
+  # present (or on PATH) on the machine that loads it.
+  LDFLAGS += -static-libgcc -static-libstdc++ -static
 else ifeq ($(TARGET_PLATFORM),iphone)
   SHARED_EXT := dylib
   SHARED_LDFLAGS := -dynamiclib
