@@ -25,6 +25,7 @@ along with RALibretro.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <libmincrypt/sha256.h>
 
+#include <stdlib.h> /* strtol -- libstdc++ happens to pull it in; libc++ (llvm-mingw) does not */
 #include <string.h>
 
 void rhash_log_error_message(const char* message); /* in Hash.c */
