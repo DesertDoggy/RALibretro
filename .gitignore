@@ -17,3 +17,4 @@
 .vscode
 user/release/mac/.DS_Store
 .DS_Store
+/user/release
